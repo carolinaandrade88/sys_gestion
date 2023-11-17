@@ -3,12 +3,12 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Rdocente extends StatelessWidget{
 
-  Future<void> agregarDocente(String Nombre, String Apellido, String Codigo, String Correo) async {
+  Future<void> agregarDocente(String Nombre, String Apellido, String Codigodedocente, String Correoelectronico) async {
     await FirebaseFirestore.instance.collection('tb_docentes').add({
       "Nombre": Nombre,
       "Apellido": Apellido,
-      "Codigo": Codigo,
-      "Correo": Correo
+      "Codigo": Codigodedocente,
+      "Correo": Correoelectronico,
     });
   }
     TextEditingController NombreController = TextEditingController();
