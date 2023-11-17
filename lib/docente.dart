@@ -3,13 +3,18 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Rdocente extends StatelessWidget{
 
-  Future<void> agregarDocente(String Nombre, String Apellido, String Codigo, String Correo) async{
-    await FirebaseFirestore.instance.collection('tb_docentes').add({"Nombre": Nombre, "Apellido": Apellido, "Codigo": Codigo, "Correo": Correo});
-
-  TextEditingController NombreController = TextEditingController();
-  TextEditingController ApellidoController = TextEditingController();
-  TextEditingController CodigodedocenteController = TextEditingController();
-  TextEditingController CorreoelectronicoController = TextEditingController();
+  Future<void> agregarDocente(String Nombre, String Apellido, String Codigo, String Correo) async {
+    await FirebaseFirestore.instance.collection('tb_docentes').add({
+      "Nombre": Nombre,
+      "Apellido": Apellido,
+      "Codigo": Codigo,
+      "Correo": Correo
+    });
+  }
+    TextEditingController NombreController = TextEditingController();
+    TextEditingController ApellidoController = TextEditingController();
+    TextEditingController CodigodedocenteController = TextEditingController();
+    TextEditingController CorreoelectronicoController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +69,7 @@ class Rdocente extends StatelessWidget{
               ),
               const SizedBox(height: 15),
               TextField(
-                controller: TelefonoController,
+                controller: CodigodedocenteController,
                 keyboardType: TextInputType.text,
                 decoration: InputDecoration(
                     filled: true,
@@ -77,7 +82,7 @@ class Rdocente extends StatelessWidget{
               ),
               const SizedBox(height: 15),
               TextField(
-                controller: TelefonoController,
+                controller: ApellidoController,
                 keyboardType: TextInputType.text,
                 decoration: InputDecoration(
                     filled: true,
@@ -90,7 +95,7 @@ class Rdocente extends StatelessWidget{
               ),
               const SizedBox(height: 15),
               TextField(
-                controller: TelefonoController,
+                controller: ApellidoController,
                 keyboardType: TextInputType.text,
                 decoration: InputDecoration(
                     filled: true,
@@ -103,7 +108,7 @@ class Rdocente extends StatelessWidget{
               ),
               const SizedBox(height: 15),
               TextField(
-                controller: TelefonoController,
+                controller: CodigodedocenteController,
                 keyboardType: TextInputType.text,
                 decoration: InputDecoration(
                     filled: true,
@@ -117,7 +122,7 @@ class Rdocente extends StatelessWidget{
 
               const SizedBox(height: 15),
               TextField(
-                controller: CorreoController,
+                controller: CorreoelectronicoController,
                 keyboardType: TextInputType.text,
                 decoration: InputDecoration(
                     filled: true,
@@ -137,7 +142,7 @@ class Rdocente extends StatelessWidget{
 
               ElevatedButton(onPressed: () async{
                 await agregarDocente(NombreController.text, ApellidoController.text, CodigodedocenteController.text, CorreoelectronicoController.text).then((_){
-                  Registro();
+                  Rdocente();
 
                   NombreController.clear();
                   ApellidoController.clear();
