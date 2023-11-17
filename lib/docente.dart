@@ -115,7 +115,7 @@ class Rdocente extends StatelessWidget{
                     fillColor: Colors.grey[200],
                     prefixIcon: const Icon(Icons.attach_money),
                     border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
-                    labelText: 'Precio',
+                    labelText: 'Codigo',
                     hintText: 'Ingrese su codigo'
                 ),
               ),
