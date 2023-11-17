@@ -116,7 +116,7 @@ class Rdocente extends StatelessWidget{
                     prefixIcon: const Icon(Icons.attach_money),
                     border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
                     labelText: 'Precio',
-                    hintText: 'Ingrese el Codigo de docente usuario'
+                    hintText: 'Ingrese su codigo'
                 ),
               ),
 
