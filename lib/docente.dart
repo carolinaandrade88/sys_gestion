@@ -1,71 +1,156 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-class DocentesPage extends StatefulWidget {
-  const DocentesPage({super.key});
+class Rdocente extends StatelessWidget{
+
+  Future<void> agregarDocente(String Nombre, String Apellido, String Codigo, String Correo) async{
+    await FirebaseFirestore.instance.collection('tb_docentes').add({"Nombre": Nombre, "Apellido": Apellido, "Codigo": Codigo, "Correo": Correo});
+
+  TextEditingController NombreController = TextEditingController();
+  TextEditingController ApellidoController = TextEditingController();
+  TextEditingController CodigodedocenteController = TextEditingController();
+  TextEditingController CorreoelectronicoController = TextEditingController();
 
   @override
-  State<DocentesPage> createState() => _DocentesPageState();
-}
+  Widget build(BuildContext context) {
+    return  SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Center(
+          child: Column(
+            children: [
+              const SizedBox(height: 15),
+              const Text('Registro de docente',
+                style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold
+                ),
+              ),
+              const SizedBox(height: 20),
+              TextField(
+                controller: NombreController,
+                keyboardType: TextInputType.text,
+                decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.grey[200],
+                    prefixIcon: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Image.asset('img/insignia.png',
+                        width: 5,
+                        height: 5,),
+                    ),
+                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                    labelText: 'Datos',
+                    hintText: 'Ingrese datos del docente'
+                ),
+              ),
+              const SizedBox(height: 15),
+              TextField(
+                controller: ApellidoController,
+                keyboardType: TextInputType.text,
+                decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.grey[200],
+                    prefixIcon: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Image.asset('img/insignia.png',
+                        width: 5,
+                        height: 5,),
+                    ),
+                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                    labelText: 'Nombre',
+                    hintText: 'Ingrese el Nombre del usuario'
+                ),
+              ),
+              const SizedBox(height: 15),
+              TextField(
+                controller: TelefonoController,
+                keyboardType: TextInputType.text,
+                decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.grey[200],
+                    prefixIcon: const Icon(Icons.attach_money),
+                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                    labelText: 'Precio',
+                    hintText: 'Ingrese el Apellido del usuario'
+                ),
+              ),
+              const SizedBox(height: 15),
+              TextField(
+                controller: TelefonoController,
+                keyboardType: TextInputType.text,
+                decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.grey[200],
+                    prefixIcon: const Icon(Icons.attach_money),
+                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                    labelText: 'Precio',
+                    hintText: 'Ingrese el Apellido del usuario'
+                ),
+              ),
+              const SizedBox(height: 15),
+              TextField(
+                controller: TelefonoController,
+                keyboardType: TextInputType.text,
+                decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.grey[200],
+                    prefixIcon: const Icon(Icons.attach_money),
+                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                    labelText: 'Precio',
+                    hintText: 'Ingrese el Apellido del usuario'
+                ),
+              ),
+              const SizedBox(height: 15),
+              TextField(
+                controller: TelefonoController,
+                keyboardType: TextInputType.text,
+                decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.grey[200],
+                    prefixIcon: const Icon(Icons.attach_money),
+                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                    labelText: 'Precio',
+                    hintText: 'Ingrese el Codigo de docente usuario'
+                ),
+              ),
 
-class _DocentesPageState extends State<DocentesPage> {
+              const SizedBox(height: 15),
+              TextField(
+                controller: CorreoController,
+                keyboardType: TextInputType.text,
+                decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.grey[200],
+                    prefixIcon: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Image.asset('img/insignia.png',
+                        width: 5,
+                        height: 5,),
+                    ),
+                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                    labelText: 'Stock',
+                    hintText: 'Ingrese el correo electronico del usuario'
+                ),
+              ),
+              const SizedBox(height: 15),
 
-TextEditingController _nombreController = TextEditingController();
-TextEditingController _apellidoController = TextEditingController();
-TextEditingController _duiController = TextEditingController();
-TextEditingController _correoController = TextEditingController();
+              ElevatedButton(onPressed: () async{
+                await agregarPadre(NombreController.text, ApellidoController.text, CodigodedocenteController.text, CorreoelectronicoController.text).then((_){
+                  Registro();
 
-@override
-Widget build(BuildContext context) {
-  return Scaffold(
-    appBar: AppBar(
-      title: Text('Registro de Docentes'),
-    ),
-    body: Padding(
-      padding: EdgeInsets.all(16.0),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          TextField(
-            controller: _nombreController,
-            decoration: InputDecoration(labelText: 'Nombre'),
+                  NombreController.clear();
+                  ApellidoController.clear();
+                  CodigodedocenteController.clear();
+                  CorreoelectronicoController.clear();
+                });
+              },
+                child: const Text('Guardar'),
+              )
+            ],
           ),
-          TextField(
-            controller: _apellidoController,
-            decoration: InputDecoration(labelText: 'Apellido'),
-          ),
-          TextField(
-            controller: _duiController,
-            decoration: InputDecoration(labelText: 'DUI'),
-          ),
-          TextField(
-            controller: _correoController,
-            decoration: InputDecoration(labelText: 'Correo Institucional'),
-          ),
-          SizedBox(height: 20), // Separación entre campos de texto y botón
-          ElevatedButton(
-            onPressed: () {
-              // Acciones al hacer clic en "Registrar"
-              _registrarDocente();
-            },
-            child: Text('Registrar'),
-          ),
-        ],
+        ),
       ),
-    ),
-  );
-}
-
-void _registrarDocente() {
-  // Aquí puedes realizar acciones para registrar al docente,
-  // utilizando los valores ingresados en los campos de texto.
-  String nombre = _nombreController.text;
-  String apellido = _apellidoController.text;
-  String dui = _duiController.text;
-  String correo = _correoController.text;
-  // Puedes imprimir los valores o realizar otras acciones aquí.
-  print('Nombre: $nombre');
-  print('Apellido: $apellido');
-  print('DUI: $dui');
-  print('Correo Institucional: $correo');
-}
+    );
+  }
 }
