@@ -102,8 +102,8 @@ class Rdocente extends StatelessWidget{
                     fillColor: Colors.grey[200],
                     prefixIcon: const Icon(Icons.attach_money),
                     border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
-                    labelText: 'Precio',
-                    hintText: 'Ingrese el Apellido del usuario'
+                    labelText: 'Apellido',
+                    hintText: 'Ingrese el Apellido del '
                 ),
               ),
               const SizedBox(height: 15),
