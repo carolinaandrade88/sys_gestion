@@ -1,3 +1,10 @@
+import 'package:flutter/material.dart';
+import 'package:sys_gestion/padres.dart';
+
+import 'docente.dart';
+
+
+
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
