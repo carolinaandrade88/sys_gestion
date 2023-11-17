@@ -103,7 +103,7 @@ class Rdocente extends StatelessWidget{
                     prefixIcon: const Icon(Icons.attach_money),
                     border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
                     labelText: 'Apellido',
-                    hintText: 'Ingrese el Apellido del '
+                    hintText: 'Ingrese su apellido '
                 ),
               ),
               const SizedBox(height: 15),
