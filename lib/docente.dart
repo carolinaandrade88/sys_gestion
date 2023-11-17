@@ -25,7 +25,7 @@ class Rdocente extends StatelessWidget{
           child: Column(
             children: [
               const SizedBox(height: 15),
-              const Text('Registro de docente',
+              const Text('Registre sus datos',
                 style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold
@@ -76,34 +76,34 @@ class Rdocente extends StatelessWidget{
                     fillColor: Colors.grey[200],
                     prefixIcon: const Icon(Icons.attach_money),
                     border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
-                    labelText: 'Precio',
-                    hintText: 'Ingrese el Apellido del usuario'
-                ),
-              ),
-              const SizedBox(height: 15),
-              TextField(
-                controller: ApellidoController,
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                    filled: true,
-                    fillColor: Colors.grey[200],
-                    prefixIcon: const Icon(Icons.attach_money),
-                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
-                    labelText: 'Precio',
-                    hintText: 'Ingrese el Apellido del usuario'
-                ),
-              ),
-              const SizedBox(height: 15),
-              TextField(
-                controller: ApellidoController,
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                    filled: true,
-                    fillColor: Colors.grey[200],
-                    prefixIcon: const Icon(Icons.attach_money),
-                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
                     labelText: 'Apellido',
-                    hintText: 'Ingrese su apellido '
+                    hintText: 'Ingrese el Apellido del usuario'
+                ),
+              ),
+              const SizedBox(height: 15),
+              TextField(
+                controller: ApellidoController,
+                keyboardType: TextInputType.text,
+                decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.grey[200],
+                    prefixIcon: const Icon(Icons.attach_money),
+                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                    labelText: 'Codigo',
+                    hintText: 'Ingrese su codigo'
+                ),
+              ),
+              const SizedBox(height: 15),
+              TextField(
+                controller: ApellidoController,
+                keyboardType: TextInputType.text,
+                decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.grey[200],
+                    prefixIcon: const Icon(Icons.attach_money),
+                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                    labelText: 'Correo',
+                    hintText: 'Ingrese su correo  '
                 ),
               ),
               const SizedBox(height: 15),
