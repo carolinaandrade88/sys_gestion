@@ -136,7 +136,7 @@ class Rdocente extends StatelessWidget{
               const SizedBox(height: 15),
 
               ElevatedButton(onPressed: () async{
-                await agregarPadre(NombreController.text, ApellidoController.text, CodigodedocenteController.text, CorreoelectronicoController.text).then((_){
+                await agregarDocente(NombreController.text, ApellidoController.text, CodigodedocenteController.text, CorreoelectronicoController.text).then((_){
                   Registro();
 
                   NombreController.clear();
